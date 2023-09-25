@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {getsubReddits} from '../api/reddit';
+import {getsubRedditPosts} from '../api/reddit';
 
 const initialState = {
   subreddits: [],
@@ -17,7 +17,7 @@ const subRedditSlice = createSlice({
     },
     getSubredditsSuccess(state, action) {
       state.isLoading = false;
-      state.subreddits = [...action.payload];
+      state.subreddits= [...action.payload];
     },
     getSubredditsFailed(state) {
       state.isLoading = false;
@@ -36,8 +36,10 @@ export default subRedditSlice.reducer;
 
 export const fetchsubReddits = () => async dispatch => {
   try {
+    let searchTerm = "cryptocurrency";  // default search term
     dispatch(startGetsubReddits());
-    const subReddits = await getsubReddits();
+    const subReddits = await getsubRedditPosts(searchTerm);
+    //console.log(subReddits)
     dispatch(getSubredditsSuccess(subReddits));
   } catch (e) {
     dispatch(getSubredditsFailed());

@@ -18,7 +18,7 @@ const AlphaNews = () => {
         {alphaNews?.alphaNews.map((news) => (
           <li key={news.title}
             className='news-item'>
-            {news.title}
+            {news.title}- (Overall Sentiment: {news.overall_sentiment_score}, {news.overall_sentiment_label})
           </li>
         ))}
       </ul>

@@ -13,12 +13,12 @@ const Subreddits = () => {
 
   return (
     <div>
-      <h1>Subreddits</h1>
+      <h1>Subreddit Posts: Cryptocurrency</h1>
       <ul className='subreddits-list'>
         {subreddits?.subreddits.map((subreddit) => (
           <li key={subreddit.id}
             className='subreddit-item'>
-            {subreddit.display_name}
+            {subreddit.title}
           </li>
         ))}
       </ul>
