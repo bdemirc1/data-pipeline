@@ -5,7 +5,7 @@ export const getCryptoExchange = async (crypto) => {
     //console.log(data);
     const dataArray = [];
 
-    const keys = Object.keys(data["Time Series (Digital Currency Weekly)"]);
+    const keys = Object.keys(data["Time Series (Digital Currency Daily)"]);
     const startIndex = Math.max(keys.length - 100, 0);
     const last100Keys = keys.slice(startIndex);
 

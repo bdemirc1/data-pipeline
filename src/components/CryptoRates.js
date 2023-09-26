@@ -9,7 +9,7 @@ const CryptoRates = () => {
   useEffect(() => {
     dispatch(fetchCryptoRates());
   }, [dispatch]);
-
+ 
   return (
     <div>
       <h1>Cryptocurrency Rates</h1>
